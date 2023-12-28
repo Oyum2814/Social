@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import NotificationsFeed from "@/components/Notifications/NotificationsFeed";
 import { NextPageContext } from "next";
-import useCurrentUser from "@/hooks/useCurrentUser";
+import { getSession } from "next-auth/react";
+
 
 export async function getServerSideProps(context:NextPageContext){
-    const {data:currentUser} = useCurrentUser();
-    if(!currentUser)
+    const session = await getSession(context);
+    if(!session)
     {
         return { 
             redirect:{
@@ -16,7 +17,7 @@ export async function getServerSideProps(context:NextPageContext){
     }
     return {
         props:{
-            currentUser
+            session
         }
     }
 }
