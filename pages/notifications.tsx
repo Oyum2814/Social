@@ -10,7 +10,7 @@ export async function getServerSideProps(context:NextPageContext){
     {
         return { 
             redirect:{
-                destination:"/",
+                destination:'/',
                 permanent:false,
             }
         }
