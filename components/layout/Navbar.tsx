@@ -46,9 +46,9 @@ const Sidebar = () => {
                     {currentUser &&(
                         <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Logout"/>
                     )}
-                   {!currentUser &&(
+                   {/* {!currentUser &&(
                      <SidebarLoginButton />
-                   )}
+                   )} */}
                 </div>
             </div>
             
