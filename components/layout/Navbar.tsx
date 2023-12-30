@@ -3,7 +3,7 @@ import { FaUser } from 'react-icons/fa'
 import {BiLogOut} from 'react-icons/bi'
 
 import SidebarLogo from './SidebarLogo'
-import SidebarItem from './SidebarItem';
+import SidebarItem from './NavbarItem';
 import SidebarLoginButton from './SidebarLoginButton';
 
 import useCurrentUser from '@/hooks/useCurrentUser';
@@ -33,10 +33,12 @@ const Sidebar = () => {
     ];
 
     return ( 
-        <div className="col-span-1 h-full pr-4 md:pr-6">
-            <div className="flex flex-col items-end ">
-                <div className="space-y-2 lg:w-[230px]">
-                    <SidebarLogo />
+        <div className="absolute bottom-0 w-screen z-40 max-h-20 left-0
+        md:top-0">
+            <div className="">
+                <div className="flex items-center justify-around bg-[rgb(39,39,39)] border-t-[1px] border-neutral-500
+                md:justify-end ">
+                    {/* <SidebarLogo /> */}
                     {items.map((item)=>(
                         <SidebarItem key={item.href} href={item.href} label={item.label} 
                         icon={item.icon} auth={item.auth} alert={item.alert}/>
@@ -44,7 +46,9 @@ const Sidebar = () => {
                     {currentUser &&(
                         <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Logout"/>
                     )}
-                    <SidebarLoginButton />
+                   {!currentUser &&(
+                     <SidebarLoginButton />
+                   )}
                 </div>
             </div>
             

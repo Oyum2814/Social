@@ -51,7 +51,7 @@ const PostItem:React.FC<PostItemProps> = ({data,userId,showExactTime}) => {
         {
             return null;
         } 
-        return format(new Date(data.createdAt),'K:m a - d MMMM yyyy')
+        return format(new Date(data.createdAt),'K:m a d MMMM yyyy')
     },[data?.createdAt]);
     const LikeIcon = hasLiked?AiFillHeart:AiOutlineHeart;
 
@@ -96,7 +96,7 @@ const PostItem:React.FC<PostItemProps> = ({data,userId,showExactTime}) => {
                         </div>
                     </div>
                     {showExactTime&&(
-                        <div className="mt-2 text-white roboto">
+                        <div className="mt-2 text-neutral-500 roboto">
                             {exactTime}
                         </div>
                     )}

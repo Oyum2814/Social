@@ -20,7 +20,7 @@ const CommentItem:React.FC<CommentItem> = ({data}) => {
         {
             return null;
         } 
-        return format(new Date(data.createdAt),'d MMMM yyyy - K:m:s a')
+        return format(new Date(data.createdAt),'dd/MM/yy  K:m aaa')
     },[data?.createdAt]);
 
     return ( 

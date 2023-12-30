@@ -2,7 +2,6 @@ import { formatDistanceToNow, formatDistanceToNowStrict } from "date-fns";
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
 import Avatar from "../Avatar";
-import { BsTwitter } from "react-icons/bs";
 
 interface NotificationItemProps{
     data: Record<string,any>

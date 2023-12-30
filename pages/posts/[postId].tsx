@@ -19,7 +19,7 @@ const PostView = () => {
     }
     return (
         <>
-            <Header label="Tweet" showBackArrow/>
+            <Header label="Post" showBackArrow/>
             <PostItem data={fetchedPost} showExactTime/>
             <CommentFeed comments={fetchedPost.comments} />
             <Form postId={postId as string}
