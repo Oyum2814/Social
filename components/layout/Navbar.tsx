@@ -33,8 +33,8 @@ const Sidebar = () => {
     ];
 
     return ( 
-        <div className="absolute bottom-0 w-screen z-40 max-h-20 left-0
-        md:top-0">
+        <div className="fixed bottom-0 w-screen z-40 max-h-20 left-0
+        md:top-0 md:absolute">
             <div className="">
                 <div className="flex items-center justify-around bg-[rgb(39,39,39)] border-t-[1px] border-neutral-500
                 md:justify-end ">
