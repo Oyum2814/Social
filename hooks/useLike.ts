@@ -35,12 +35,10 @@ const useLike = ({postId,userId}:{postId:string,userId?:string})=>{
                 request = ()=>axios.post('/api/like',{postId});
             }
             
+            toast.success(hasLiked ? 'Unliked!' : 'Liked!');
             await request();
-            mutateFetchedPost();
             mutateFetchedPosts();
-            if(!hasLiked){
-                toast.success('Liked!');
-            }
+            mutateFetchedPost();
         }
         catch(error) {
             toast.error('Something Went Wrong')
